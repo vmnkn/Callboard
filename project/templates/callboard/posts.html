@@ -12,7 +12,7 @@
                         <header class="mb-4">
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">
-                                <a href="{% url 'post_detail' post.id %}">{{ post.title }} {{ post.id }}</a>
+                                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
                             </h1>
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">{{ post.time_create }}</div>
@@ -31,10 +31,10 @@
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{{ post.text|linebreaks }}</p>
                             <hr>
+                            <h2 class="fw-bolder mb-4 mt-5">Comments</h2>
                             {% block comments %}
                             {% for comment in comments %}
                             {% if comment.post.id == post.id %}
-                            <h2 class="fw-bolder mb-4 mt-5">Comments</h2>
                             <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Single comment-->
@@ -47,10 +47,10 @@
                                 </div>
                             </div>
                         </div>
+                        </section>
                             {% endif %}
                             {% endfor %}
                             {% endblock comments %}
-                        </section>
                     </article>
                 </div>
             </div>
