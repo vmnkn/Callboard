@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+{% block comments %}
+{% endblock comments %}
+{% block filter %}
+{% endblock filter %}
+
+
+<form action="{% url 'post_delete' post.id %}" method="post">
+    {% csrf_token %}
+    <p>Delete {{ object.name }}?</p>
+    <input type="submit" class="btn btn-primary mt-auto button" value="Delete">
+</form>
+
+{% endblock content %}
