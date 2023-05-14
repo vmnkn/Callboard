@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h2>Hello! Last week post:</h2>
+{% for post in posts %}
+<a href="{{ link }}{{ post.get_absolute_url }}">{{ post.title }}</a>
+{% endfor %}
+</body>
+</html>
